@@ -5,7 +5,7 @@ from matplotlib import pyplot as plt
 
 def cleanChlData():
 
-    df = pd.read_csv('data\chl.csv')
+    df = pd.read_csv('data/chl.csv')
     df["Time"] = pd.to_datetime(df['Time'])
     geometry = [list(map(float, x.split(','))) for x in df.AOI]
     lat = pd.Series([x[0] for x in geometry])
