@@ -5,7 +5,6 @@ Chloro-kNOw is an online dashboard that relates factors that affect chlorophyll 
 
 # Project Demo
 * Video demo: https://youtu.be/DpcNKZ0--_0
-
 * Live site: https://share.streamlit.io/janinirami/chloro-know/main/app.py
 
 # How We Addressed This Challenge
