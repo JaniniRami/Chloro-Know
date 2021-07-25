@@ -12,6 +12,7 @@ import plotly.figure_factory as ff
 import plotly.express as px
 from models.process_data import tokyoData, veniceData, newYorkData, movingAverage
 import streamlit.components.v1 as components
+from models.correlations import *
 
 st.set_page_config(
         page_title="Chloro-kNOw Solution ",
@@ -69,10 +70,10 @@ def main():
         activity_df_japan = load_data()[2]
         data_load_state.text('')
 
-
-        st.dataframe(load_data()[-1])
         st.markdown('Chl-a is an indicator of phytoplankton abundance which fluctuates naturally with nutrient, solar irradiance, and water temperature, and so on. In coastal areas, Chl-a is commonly used as a proxy for water quality because it is strongly influenced by river runoff and human activities, such as the discharge of urban sewage and agriculture fertilizers.')
-
+        st.markdown('NOTE: The correlations below are based on a model we made and can be more accurate if we add more data to it.')
+        st.markdown(f'**● Correlation percentage between COVID19 new cases & Chl-Concentration: {str(chl_covid_correlation())}%**')
+        st.markdown(f'**● Correlation percentage between Human Activity & Chl-Concentration: {str(chl_activity_correlation())}%**')
     with row3_2, _lock:
         st.header("Chlorophyll-a concentration in Japan")
         chl_df_tokyo.sort_values(by='Time', ascending=True, inplace=True)
