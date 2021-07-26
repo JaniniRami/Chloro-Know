@@ -97,7 +97,7 @@ def main():
     row4_space1, row4_1, row4_space2, row4_2, row4_space3 = st.beta_columns(
         (.1, 1, .1, 1, .1))
 
-    with row4_2, _lock:
+    with row4_1, _lock:
         st.header("Interesting dates for Japan")
         st.markdown('''The concentration of Chlorophyll-a is tested in lakes to determine how much algae is in the lake. Our solution shows the relationship between human activities and algae bloom, throughout the COVID-19 pandemic human activities became decreasing and in result the concentration of Chl-a began decreasing to understand the dates below you must understand this first:
         \n Some of the decrease of the concentration of CHL was caused because of the high reported COVID-19 cases which meant less human activity in the past two months of the CHL decrease date.
@@ -113,7 +113,7 @@ def main():
         expander_2 = st.beta_expander("The largest increase of concentration reported at 2019-11-09 in Japan.")
         expander_2.write('''The largest increase in the CHL concentration was reported in 2019-11-09 with an increase value of +265.03 in Tokyo, and if we take a look at the months before June we can realize that the increase happened before the Pandemic. ''')
 
-    with row4_1, _lock:
+    with row4_2, _lock:
         country = 'Japan'
         st.header("Japan Covid Cases")
         if button_1:
