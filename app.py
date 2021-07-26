@@ -147,13 +147,10 @@ def main():
 
     with row5_1, _lock:
 
-        st.header("Cars/Containers Acttivity in Japan")
-        japan_activity_fig = px.bar(activity_df_japan,x='time',y='measurement', color='colorCode')
-        japan_activity_fig.update_layout(title_x=0.5, xaxis_rangeslider_visible=True)
-        japan_activity_fig.update_yaxes(title_text='Car Density')
-        japan_activity_fig.update_xaxes(title_text='Date')
-        st.plotly_chart(japan_activity_fig)
-        st.markdown('From November 2019 to June 2020, the Japanese Aerospace Exploration Agency’s (JAXA) ALOS-2 satellite observed the density of car containers at Shimpomachi Terminal in the port of Nagoya to monitor the condition of industrial trade. During the novel coronavirus pandemic, ALOS-2 observations show that shipments of new cars decreased. ')
+        st.header("Recovery Proxy map in Japan")
+        components.html('<iframe class="item" src="https://eodashboard.org/iframe?poi=JP01-N8" width="600px" height="500px" frameBorder="0" scroll="no" style="overflow:hidden"></iframe>', height=500,width=1000)
+        st.markdown('As businesses closed and stay-at-home orders were enacted to slow the spread of the COVID-19 pandemic, cities across the world have seen reductions in automobile traffic')
+
 
     with row5_2, _lock:
         st.header("Chlorophyll-a concentration map in Japan")
@@ -177,10 +174,14 @@ def main():
 
 
     with row6_2, _lock:
-        st.header("Recovery Proxy map in Japan")
-        components.html('<iframe class="item" src="https://eodashboard.org/iframe?poi=JP01-N8" width="600px" height="500px" frameBorder="0" scroll="no" style="overflow:hidden"></iframe>', height=500,width=1000)
-        st.markdown('As businesses closed and stay-at-home orders were enacted to slow the spread of the COVID-19 pandemic, cities across the world have seen reductions in automobile traffic')
-
+        st.header("Cars/Containers Acttivity in Japan")
+        japan_activity_fig = px.bar(activity_df_japan,x='time',y='measurement', color='colorCode')
+        japan_activity_fig.update_layout(title_x=0.5, xaxis_rangeslider_visible=True)
+        japan_activity_fig.update_yaxes(title_text='Car Density')
+        japan_activity_fig.update_xaxes(title_text='Date')
+        st.plotly_chart(japan_activity_fig)
+        st.markdown('From November 2019 to June 2020, the Japanese Aerospace Exploration Agency’s (JAXA) ALOS-2 satellite observed the density of car containers at Shimpomachi Terminal in the port of Nagoya to monitor the condition of industrial trade. During the novel coronavirus pandemic, ALOS-2 observations show that shipments of new cars decreased. ')
+    
 
 
     st.write('')
