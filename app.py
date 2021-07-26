@@ -151,9 +151,13 @@ def main():
         # st.markdown("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.")
         st.markdown('The Chl-a indicator map in Tokyo Bay are displayed as an example of the coastal water-quality changes near the Japanese biggest city, Tokyo. ')
     with row5_2, _lock:
-        st.header("Recovery Proxy map in Japan")
-        components.html('<iframe class="item" src="https://eodashboard.org/iframe?poi=JP01-N8" width="600px" height="500px" frameBorder="0" scroll="no" style="overflow:hidden"></iframe>', height=500,width=1000)
-        st.markdown('As businesses closed and stay-at-home orders were enacted to slow the spread of the COVID-19 pandemic, cities across the world have seen reductions in automobile traffic')
+        st.header("Cars/Containers Acttivity in Japan")
+        japan_activity_fig = px.bar(activity_df_japan,x='time',y='measurement', color='colorCode')
+        japan_activity_fig.update_layout(title_x=0.5, xaxis_rangeslider_visible=True)
+        japan_activity_fig.update_yaxes(title_text='Car Density')
+        japan_activity_fig.update_xaxes(title_text='Date')
+        st.plotly_chart(japan_activity_fig)
+        st.markdown('From November 2019 to June 2020, the Japanese Aerospace Exploration Agency’s (JAXA) ALOS-2 satellite observed the density of car containers at Shimpomachi Terminal in the port of Nagoya to monitor the condition of industrial trade. During the novel coronavirus pandemic, ALOS-2 observations show that shipments of new cars decreased. ')
 
     st.write('')
     row6_space1, row6_1, row6_space2, row6_2, row6_space3 = st.beta_columns(
@@ -168,14 +172,11 @@ def main():
         st.plotly_chart(japan_air_fig)
         st.markdown('In an effort to mitigate the spread of the novel coronavirus, government and public health officials have enacted various social distancing practices and other measures to limit human contact, at times placing entire countries on lockdown. As human behavior has changed during the pandemic, ongoing measurements from Earth observing instruments have detected concurrent changes in environmental factors, such as a drop in the air pollutant nitrogen dioxide (NO2). ')
     with row6_2, _lock:
-        st.header("Cars/Containers Acttivity in Japan")
-        japan_activity_fig = px.bar(activity_df_japan,x='time',y='measurement', color='colorCode')
-        japan_activity_fig.update_layout(title_x=0.5, xaxis_rangeslider_visible=True)
-        japan_activity_fig.update_yaxes(title_text='Car Density')
-        japan_activity_fig.update_xaxes(title_text='Date')
-        st.plotly_chart(japan_activity_fig)
-        st.markdown('From November 2019 to June 2020, the Japanese Aerospace Exploration Agency’s (JAXA) ALOS-2 satellite observed the density of car containers at Shimpomachi Terminal in the port of Nagoya to monitor the condition of industrial trade. During the novel coronavirus pandemic, ALOS-2 observations show that shipments of new cars decreased. ')
-        # st.markdown("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.")
+
+        st.header("Recovery Proxy map in Japan")
+        components.html('<iframe class="item" src="https://eodashboard.org/iframe?poi=JP01-N8" width="600px" height="500px" frameBorder="0" scroll="no" style="overflow:hidden"></iframe>', height=500,width=1000)
+        st.markdown('As businesses closed and stay-at-home orders were enacted to slow the spread of the COVID-19 pandemic, cities across the world have seen reductions in automobile traffic')
+
 
 
     st.write('')
