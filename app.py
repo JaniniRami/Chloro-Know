@@ -164,6 +164,11 @@ def main():
         (.1, 1, .1, 1, .1))
 
     with row6_1, _lock:
+        st.header("Recovery Proxy map in Japan")
+        components.html('<iframe class="item" src="https://eodashboard.org/iframe?poi=JP01-N8" width="600px" height="500px" frameBorder="0" scroll="no" style="overflow:hidden"></iframe>', height=500,width=1000)
+        st.markdown('As businesses closed and stay-at-home orders were enacted to slow the spread of the COVID-19 pandemic, cities across the world have seen reductions in automobile traffic')
+
+    with row6_2, _lock:
         st.header("Air quality measurement in Japan")
         japan_air_fig=px.bar(air_df_tokyo,x='time',y='measurement')
         japan_air_fig.update_layout(title_x=0.5, xaxis_rangeslider_visible=True)
@@ -171,11 +176,7 @@ def main():
         japan_air_fig.update_xaxes(title_text='Date')
         st.plotly_chart(japan_air_fig)
         st.markdown('In an effort to mitigate the spread of the novel coronavirus, government and public health officials have enacted various social distancing practices and other measures to limit human contact, at times placing entire countries on lockdown. As human behavior has changed during the pandemic, ongoing measurements from Earth observing instruments have detected concurrent changes in environmental factors, such as a drop in the air pollutant nitrogen dioxide (NO2). ')
-    with row6_2, _lock:
 
-        st.header("Recovery Proxy map in Japan")
-        components.html('<iframe class="item" src="https://eodashboard.org/iframe?poi=JP01-N8" width="600px" height="500px" frameBorder="0" scroll="no" style="overflow:hidden"></iframe>', height=500,width=1000)
-        st.markdown('As businesses closed and stay-at-home orders were enacted to slow the spread of the COVID-19 pandemic, cities across the world have seen reductions in automobile traffic')
 
 
 
