@@ -56,7 +56,7 @@ def main():
         (.1, 1, .1, 1, .1))
     # country = st.multiselect('Select a country', ['Japan', 'Italy', 'United States'])
     with row3_1, _lock:
-        st.header("Tokyo Data 🇯🇵 ")
+        st.header("Introduction & Correlations")
 
         # Load Tokyo data.
         @st.cache(allow_output_mutation=True)
