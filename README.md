@@ -3,8 +3,8 @@
 # Chloro-Know
 Chloro-kNOw is an online dashboard that relates factors that affect chlorophyll (Chl) concentrations in order to draw relationships between COVID-19 and its effects on Chl concentrations. With chloro-kNOw, we aim to raise awareness about daily actions that can lead to increases in algal blooms and mitigate them in order to keep our water clean for the generations to come. Be in the know to tell chloro no! 
 
-# Project Demo
-* Video demo: https://youtu.be/DpcNKZ0--_0
+# Links
+* Demo video: https://youtu.be/DpcNKZ0--_0
 * Live site: https://share.streamlit.io/janinirami/chloro-know/main/app.py
 * Submission: https://www.eodashboardhackathon.org/challenges/water-quality/looking-at-the-big-picture/teams/chloro-know/project
 
